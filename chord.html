@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bonusly Distribution</title>
+    <style>
+        #tooltip {
+            color: white;
+            opacity: .9;
+            background: #333;
+            padding: 5px;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 10;
+            visibility: hidden;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        #circle circle {
+            fill: none;
+            pointer-events: all;
+        }
+        path.group {
+            fill-opacity: .8;
+        }
+        path.chord {
+            fill-opacity: .8;
+            stroke: #000;
+            stroke-width: .25px;
+        }
+        #circle:hover path.fade {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>February 2020 Bonusly Distribution</h1>
+<div id="tooltip"></div>
+<script src="lib/d3.js"></script>
+<script src="lib/underscore.js"></script>
+<script src="js/mapper.js"></script>
+<script>
+    //*******************************************************************
+    //  CREATE MATRIX AND MAP
+    //*******************************************************************
+    d3.csv('data/feb-2020.csv', function (error, data) {
+        var mpr = chordMpr(data);
+
+        mpr
+            .addValuesToMap('from')
+            .setFilter(function (row, a, b) {
+                return (row.from === a.name && row.to === b.name)
+            })
+            .setAccessor(function (recs, a, b) {
+                if (!recs[0]) return 0;
+                return +recs[0].count;
+            });
+        drawChords(mpr.getMatrix(), mpr.getMap());
+    });
+    //*******************************************************************
+    //  DRAW THE CHORD DIAGRAM
+    //*******************************************************************
+    function drawChords (matrix, mmap) {
+        var w = 980, h = 800, r1 = h / 2, r0 = r1 - 100;
+
+        var fill = d3.scale.ordinal()
+            .domain(d3.range(542))
+            .range([
+                "#0fcbe4", "#0a4e8e", "#942de5", "#6586e2", "#f3d1ef", "#4bbb99", "#36af8b", "#72777c", "#d1b697", "#c8d4ef", "#f41eee", "#e24aa0", "#84526a", "#3f18c0", "#efa7da", "#fc349e", "#3f1fd3", "#721bfd", "#c54a3c", "#97748a", "#282b49", "#a6ec75", "#3a97b1", "#376f1f", "#e8767e", "#6d0c67", "#dd07c1", "#834d9b", "#17b356", "#f1fcfd", "#4266c4", "#d8c1c1", "#cc1679", "#813c48", "#de23b9", "#0ef012", "#e8782f", "#299a1e", "#a5edcc", "#687cfb", "#33f1f0", "#ffac42", "#22345d", "#9544dc", "#6e0c38", "#89319b", "#4b3238", "#44af34", "#b07f98", "#2751b4", "#1c5779", "#c5fbfb", "#7ab9f7", "#23a23a", "#28a694", "#61056b", "#ea643b", "#fd84d7", "#810b71", "#53ef36", "#040586", "#e35040", "#5dc789", "#1a2fcb", "#e56c7c", "#550325", "#cd81f8", "#054b9a", "#c5948d", "#006f70", "#6fe8be", "#3398d7", "#12ea9c", "#6f8127", "#1d8c45", "#dc361d", "#426cd2", "#c209cd", "#f73f23", "#043da5", "#92de0d", "#250f63", "#8fae1e", "#9d0d88", "#c1798e", "#2ceba0", "#8eaf10", "#6b4926", "#0dd66b", "#699041", "#6a61e2", "#a02d53", "#d000f6", "#e1b74f", "#b0d32b", "#c3d9a3", "#bf0b7e", "#6fb4f8", "#6833a1", "#1c322d", "#c44ad5", "#699dc0", "#ae7c9b", "#923735", "#5d2e7d", "#61d69f", "#725e5a", "#583376", "#d6d4e8", "#79dd4d", "#0c290c", "#e3a0e5", "#b19617", "#99dd3c", "#671a6b", "#886b5d", "#c25933", "#81ed70", "#078575", "#5e13a8", "#2aea91", "#d164a5", "#0417e5", "#f63e0d", "#20abbc", "#0fdd5b", "#e3f78b", "#4fd0f9", "#3859d2", "#66d1e8", "#d3cecd", "#3e2d1c", "#f3babc", "#91ba56", "#eea80e", "#ba50b8", "#72c901", "#51eb2d", "#2c1869", "#d8843d", "#576a6a", "#91b9c9", "#3aa4df", "#da5aec", "#7c8f03", "#76c8ba", "#be01bf", "#6f1b37", "#79b92b", "#8e92ea", "#05f640", "#170d2b", "#55b3e7", "#ea3ee3", "#1168c8", "#466950", "#7a0567", "#be21fd", "#873901", "#ea3f0c", "#5c06c7", "#8d6036", "#a626fd", "#4b4e20", "#c80a68", "#b11722", "#2c40e3", "#46b5fe", "#313b12", "#dcd2a7", "#245b03", "#5c44d9", "#603867", "#fff5f4", "#993c87", "#2640c0", "#42e345", "#3a9f29", "#6f2fe7", "#919cfb", "#0f55a7", "#e4be34", "#8f6282", "#b79947", "#4a7e59", "#7d46bf", "#cd762d", "#12f4f2", "#266fd5", "#1b18fb", "#012f59", "#806304", "#b0220c", "#6ab7bd", "#e89e85", "#2aafa2", "#164033", "#5d47b4", "#6f699b", "#b841ae", "#584a60", "#4a72a3", "#b04aae", "#351c22", "#19946a", "#7ef07c", "#ee9451", "#bd1760", "#49ba79", "#61304f", "#0dee7a", "#307f7c", "#3a06bc", "#e3276d", "#0a049c", "#ebc4ea", "#887bd8", "#97db0f", "#f48696", "#f3d33d", "#5fa106", "#a38398", "#cf17b8", "#5d9475", "#98a8a5", "#707ee6", "#ec3dbc", "#51f652", "#828714", "#6cb3b9", "#387344", "#526640", "#8db9a5", "#c2784e", "#f9384d", "#ccc47b", "#c93e8e", "#35ea77", "#e9b0c5", "#1057a6", "#fdc2dd", "#5cc07f", "#5c43f5", "#ad5b48", "#4a598e", "#e25612", "#b1455c", "#ceec24", "#835743", "#0ff2a2", "#3d1306", "#5b6651", "#7e7896", "#d3411a", "#90135d", "#e9394e", "#6e6b83", "#97e0c8", "#3446ee", "#aa863e", "#ad2a5a", "#c6171c", "#d8bcf3", "#815a5c", "#dc1402", "#50e371", "#03d341", "#e7d78f", "#92f341", "#b06dcf", "#4dd54c", "#060719", "#86722a", "#e7d522", "#72bd41", "#e1bdc6", "#c7cf52", "#1d8d7a", "#fb8e56", "#88082d", "#ce28f7", "#c36829", "#2e064d", "#907fe1", "#208538", "#083d77", "#924265", "#bd68c6", "#208954", "#33cd06", "#942d58", "#1123d1", "#55ad1b", "#bb5ae7", "#46922c", "#38a8f1", "#f8aceb", "#37fe51", "#af0460", "#469ea5", "#bb0690", "#a8d480", "#06c924", "#db42e2", "#04f0ae", "#ac7a45", "#39080c", "#858895", "#207056", "#5e90dd", "#bc2299", "#28b29f", "#3172c8", "#fe9968", "#7ebdeb", "#16c121", "#09ea94", "#2b8e2a", "#980828", "#12e99d", "#298f4b", "#707d27", "#51bb83", "#6c9848", "#23870e", "#759aea", "#ffdf3a", "#d0ce6c", "#71f33d", "#f93351", "#f10918", "#0195fc", "#0b50d3", "#aed634", "#54b212", "#a79f3a", "#fa1027", "#d4da1d", "#46f7f7", "#d3fccd", "#369131", "#38d85e", "#2eec9f", "#626020", "#d8cb46", "#0d8b42", "#0b64d4", "#efd5d8", "#592a3c", "#c40eb8", "#2e63e3", "#3d7de2", "#540780", "#4b8759", "#c52f99", "#e15fcb", "#2ef30f", "#f5fcb5", "#179a61", "#dd4701", "#ec1259", "#1f96ef", "#cf4163", "#1ac85d", "#efbd2e", "#357470", "#a8d280", "#c03c19", "#0607f1", "#7e87c3", "#269d30", "#b9f1d3", "#103dfc", "#1e0913", "#9bddb5", "#427326", "#ab65f0", "#263885", "#c43a07", "#f3aed1", "#94c32a", "#0f2929", "#3182d8", "#eefa50", "#8bd51c", "#c57ef2", "#5b3dde", "#3fae88", "#1f22f1", "#87cd3c", "#e19973", "#af7ee4", "#5561a3", "#71a8c6", "#429c48", "#aa471c", "#da09c8", "#fc6c69", "#d710cf", "#8fbbf7", "#5d91e7", "#1b3e0c", "#ee3428", "#d0a108", "#8ca3ff", "#1cb9ee", "#159085", "#64b482", "#6750d5", "#b01a4a", "#9553a2", "#ae1f0d", "#9f6e34", "#921a7d", "#ce38bf", "#d922dd", "#de51e9", "#893d06", "#7af991", "#6c0fb5", "#76d41b", "#c92d9a", "#787b66", "#784178", "#af397f", "#33f23c", "#16a903", "#46a4fc", "#bf71b8", "#be14af", "#adbadf", "#eb82e9", "#8dabdc", "#999e5d", "#69c1fd", "#cdad16", "#dd5481", "#acbc24", "#7bb211", "#a08a3b", "#bbdd56", "#2fe609", "#df57b5", "#ca8b51", "#4bed8a", "#100a23", "#1d54f9", "#507f40", "#5e79ef", "#725cad", "#446685", "#1c7e93", "#0c9d86", "#5c9748", "#7a3056", "#76b02a", "#f321de", "#532020", "#f70911", "#19ac95", "#4f5b99", "#8f108e", "#c6e976", "#0d1e65", "#2785eb", "#3e44c3", "#56fa44", "#17025d", "#9a8491", "#c0cb1d", "#dd0c7d", "#364818", "#c80bef", "#843fa0", "#1b029f", "#b6b56b", "#217b2f", "#650d7c", "#7b4291", "#de35b3", "#dd320d", "#14b302", "#03e5d4", "#8aee9e", "#d1eaf6", "#0769e6", "#e8e3d2", "#684625", "#2d3111", "#fcde7f", "#1f34ba", "#fc48b4", "#29e038", "#ec7917", "#be4dda", "#7b47f6", "#435347", "#8dd7c8", "#085b07", "#e87bbd", "#4f637d", "#b800c8", "#535c41", "#eda586", "#88c9ab", "#04cca0", "#24960b", "#dd7498", "#8f59ed", "#8c5096", "#822716", "#e407e9", "#42250a", "#d10c9d", "#eab4b3", "#eb976d", "#6f309e", "#e8c9b9", "#9c0a42", "#3e86dd", "#cec2f0", "#57f271", "#ea7f83", "#e058d5", "#7ccfc2", "#867846", "#c98b35", "#4106ce", "#c2f850", "#5638c4", "#26a607", "#3911f5", "#674ebe", "#8302e0", "#2fa6b0", "#2666f5", "#421079", "#c8b963", "#066e17", "#d30972", "#10dba2", "#7e6d56"
+            ]);
+
+        var chord = d3.layout.chord()
+            .padding(.02)
+            .sortSubgroups(d3.descending)
+            .sortChords(d3.descending);
+
+        var arc = d3.svg.arc()
+            .innerRadius(r0)
+            .outerRadius(r0 + 20);
+
+        var svg = d3.select("body").append("svg:svg")
+            .attr("width", w)
+            .attr("height", h)
+            .append("svg:g")
+            .attr("id", "circle")
+            .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+
+        svg.append("circle")
+            .attr("r", r0 + 20);
+
+        var rdr = chordRdr(matrix, mmap);
+        chord.matrix(matrix);
+
+        var g = svg.selectAll("g.group")
+            .data(chord.groups())
+            .enter().append("svg:g")
+            .attr("class", "group")
+            .on("mouseover", mouseover)
+            .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+        g.append("svg:path")
+            .style("stroke", "black")
+            .style("fill", function(d) { return fill(d.index); })
+            .attr("d", arc);
+
+        g.append("svg:text")
+            .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+            .attr("dy", ".35em")
+            .style("font-family", "helvetica, arial, sans-serif")
+            .style("font-size", "10px")
+            .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+            .attr("transform", function(d) {
+                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+                    + "translate(" + (r0 + 26) + ")"
+                    + (d.angle > Math.PI ? "rotate(180)" : "");
+            })
+            .text(function(d) { return rdr(d).gname; });
+
+        var chordPaths = svg.selectAll("path.chord")
+            .data(chord.chords())
+            .enter().append("svg:path")
+            .attr("class", "chord")
+            .style("stroke", function(d) { return d3.rgb(fill(d.target.index)).darker(); })
+            .style("fill", function(d) { return fill(d.target.index); })
+            .attr("d", d3.svg.chord().radius(r0))
+            .on("mouseover", function (d) {
+                d3.select("#tooltip")
+                    .style("visibility", "visible")
+                    .html(chordTip(rdr(d)))
+                    .style("top", function () { return (d3.event.pageY - 100)+"px"})
+                    .style("left", function () { return (d3.event.pageX - 100)+"px";})
+            })
+            .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+        function chordTip (d) {
+            var p = d3.format(".2%"), q = d3.format(",.3r")
+            return "Chord Info:<br/>"
+                + p(d.svalue/d.stotal) + " (" + q(d.svalue) + ") of "
+                + d.sname + " bonusly went to " + d.tname
+                + (d.sname === d.tname ? "": ("<br/>while...<br/>"
+                    + p(d.tvalue/d.ttotal) + " (" + q(d.tvalue) + ") of "
+                    + d.tname + " bonusly went to " + d.sname))
+        }
+
+        function groupTip (d) {
+            var p = d3.format(".1%"), q = d3.format(",.3r")
+            return "Group Info:<br/>"
+                + d.gname + " : " + q(d.gvalue) + "<br/>"
+                + p(d.gvalue/d.mtotal) + " of Matrix Total (" + q(d.mtotal) + ")"
+        }
+
+        function mouseover(d, i) {
+            d3.select("#tooltip")
+                .style("visibility", "visible")
+                .html(groupTip(rdr(d)))
+                .style("top", function () { return (d3.event.pageY - 80)+"px"})
+                .style("left", function () { return (d3.event.pageX - 130)+"px";})
+
+            chordPaths.classed("fade", function(p) {
+                return p.source.index != i
+                    && p.target.index != i;
+            });
+        }
+    }
+
+</script>
+</body>
+</html>

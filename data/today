@@ -1,0 +1,160 @@
+from,to,count
+"account management/glam","account management/glam",76
+"account management/glam","business finance",10
+"account management/glam","customer success management csm",25
+"account management/glam","customer support",30
+"account management/glam","lift cs",20
+"account management/glam","quota carrying",50
+"account management/glam",revenue,30
+"account management/glam",sales,55
+accounting,accounting,141
+accounting,"business finance",10
+accounting,"facilities /ga",25
+accounting,finance,15
+accounting,"g&a ops",10
+accounting,revenue,30
+bdr,"account management/glam",10
+bdr,bdr,300
+bdr,"inside sales",40
+bdr,sales,20
+"business finance",accounting,50
+channel,"account management/glam",20
+channel,channel,20
+channel,"customer support",25
+channel,marketing,50
+channel,presales,20
+channel,"professional services",50
+channel,"quota carrying",30
+"cohesion engineering","cohesion engineering",10
+"cohesion engineering",products,30
+"commerce engineering","commerce engineering",20
+"commerce engineering",products,15
+"customer success","customer success",15
+"customer success","customer support",10
+"customer success","enterprise applications",20
+"customer success","professional services",110
+"customer success innovations","account management/glam",10
+"customer success innovations","customer success innovations",10
+"customer success innovations","customer support",5
+"customer success innovations","engineering services",10
+"customer success innovations","factories engineering",10
+"customer success innovations",products,25
+"customer success management csm","professional services",25
+"customer support","account management/glam",10
+"customer support","customer support",111
+"customer support","incident response",15
+"customer support","lift cs",4
+"customer support","professional services",11
+"customer support","sales ops",2
+"demand gen","demand gen",25
+"demand gen",marketing,70
+"demand gen","sales ops",5
+"digital marketing","facilities /ga",50
+"drupal engineering","drupal engineering",230
+"drupal engineering",products,140
+"engineering services","engineering services",10
+"enterprise applications","customer success",15
+"enterprise applications","learning services",30
+"factories engineering","factories engineering",20
+"field marketing","event marketing",20
+"field marketing","field marketing",28
+finance,accounting,20
+"human resources",accounting,20
+"human resources",fp&a,10
+"human resources","human resources",70
+"human resources",it,15
+"human resources","professional services",25
+"human resources","security engineering",20
+"incident response","customer support",15
+"incident response","incident response",25
+"inside sales",revenue,10
+legal,legal,99
+legal,revenue,51
+"lift cs","account management/glam",10
+"lift cs","customer support",10
+"lift cs","lift cs",30
+"lift cs","professional services",5
+"lift cs",tam,20
+marketing,accounting,20
+marketing,"demand gen",40
+marketing,"drupal engineering",25
+marketing,"field marketing",10
+marketing,marketing,127
+marketing,"marketing operations",10
+marketing,"product marketing",11
+"marketing operations","customer support",10
+"marketing operations",fp&a,5
+"marketing operations",marketing,17
+"marketing operations",revenue,3
+"mautic engineering","commerce engineering",15
+"mautic engineering","mautic engineering",10
+"operations cs","operations cs",292
+presales,"account management/glam",10
+presales,"customer success management csm",15
+presales,"inside sales",100
+presales,marketing,5
+presales,presales,251
+presales,products,35
+presales,"quota carrying",5
+presales,sales,10
+presales,tam,20
+"product marketing","g&a ops",10
+products,"cohesion engineering",25
+products,"customer success innovations",15
+products,"drupal engineering",5
+products,engineering,10
+products,"engineering services",15
+products,products,170
+products,"professional services",25
+products,sales,10
+products,"security engineering",10
+products,"strategic project management pmo",15
+"professional services","account management/glam",10
+"professional services","agilone engineering",75
+"professional services","customer success",85
+"professional services","drupal engineering",10
+"professional services",engineering,20
+"professional services","experience engineering",5
+"professional services","lift cs",15
+"professional services",presales,25
+"professional services",products,10
+"professional services","professional services",1231
+"professional services",revenue,20
+"professional services",sales,10
+"professional services",tam,15
+"quota carrying","account management/glam",7
+"quota carrying",legal,20
+"quota carrying",presales,80
+"quota carrying","professional services",25
+"quota carrying","quota carrying",141
+"quota carrying",sales,10
+"quota carrying",tam,10
+revenue,"account management/glam",5
+revenue,accounting,5
+revenue,"business finance",10
+revenue,revenue,390
+revenue,"sales ops",10
+sales,"account management/glam",35
+sales,"customer success management csm",50
+sales,presales,78
+sales,products,20
+sales,"quota carrying",15
+sales,sales,55
+"sales ops","account management/glam",20
+"sales ops",fp&a,40
+"sales ops","product marketing",20
+"sales ops",revenue,60
+"sales ops","sales ops",100
+"security engineering","security engineering",25
+"talent acquisition","professional services",110
+"talent acquisition","talent acquisition",5
+tam,"account management/glam",28
+tam,channel,5
+tam,"customer success management csm",10
+tam,"customer support",35
+tam,"facilities /ga",5
+tam,"incident response",25
+tam,"professional services",20
+tam,tam,110
+ux,products,25
+ux,ux,70
