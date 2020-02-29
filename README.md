@@ -1,5 +1,8 @@
 # Bonusly Distribution
-Visualizing the Bonusly transaction among teams at my current employer.
+Visualizing the Bonusly transaction among teams at my current employer.  
+https://balsama.github.io/bonusly-chords/
+
+![Chord diagram of Bonusly transactions](img/Bonusly_Distribution.png)
 
 ## Disclaimer
 The data gathered by these scripts and presennted in the charts are not 100%
