@@ -1,0 +1,428 @@
+from,to,count
+"account management/glam","account management/glam",1884
+"account management/glam",bdr,10
+"account management/glam","business finance",20
+"account management/glam",channel,20
+"account management/glam","customer success management csm",225
+"account management/glam","customer support",125
+"account management/glam","digital experience",45
+"account management/glam","drupal cloud engineering",10
+"account management/glam","drupal cloud products",130
+"account management/glam","facilities /ga",45
+"account management/glam","field marketing",20
+"account management/glam","field sales",80
+"account management/glam",fp&a,10
+"account management/glam","governance, risk & compliance",10
+"account management/glam",legal,40
+"account management/glam","operations cs",20
+"account management/glam",presales,660
+"account management/glam","professional services",110
+"account management/glam",revenue,342
+"account management/glam","sales ops",35
+"account management/glam",tam,235
+accounting,accounting,374
+accounting,"business finance",23
+accounting,"digital marketing",20
+accounting,"facilities /ga",35
+accounting,"g&a ops",10
+accounting,"human resources",15
+accounting,"information technology",60
+accounting,"professional services",10
+accounting,revenue,55
+bdr,"account management/glam",17
+bdr,bdr,1273
+bdr,"field sales",200
+bdr,"human resources",10
+bdr,"inside sales",10
+bdr,marketing,85
+bdr,"marketing operations",25
+bdr,"product marketing",50
+bdr,revenue,10
+bdr,"talent acquisition",10
+"business finance",accounting,87
+"business finance","business finance",60
+"business finance",fp&a,25
+"business finance","human resources",5
+"business finance",revenue,35
+"business finance","sales ops",15
+channel,"account management/glam",50
+channel,accounting,20
+channel,channel,345
+channel,"customer success management csm",20
+channel,"field sales",20
+channel,"human resources",10
+channel,marketing,45
+channel,presales,158
+channel,"product marketing",20
+"customer success innovations","account management/glam",15
+"customer success innovations","customer success innovations",135
+"customer success innovations","customer success management csm",15
+"customer success innovations","customer support",135
+"customer success innovations","drupal cloud engineering",70
+"customer success innovations","drupal cloud products",45
+"customer success innovations","information technology",15
+"customer success innovations","marketing cloud products",5
+"customer success innovations","professional services",20
+"customer success innovations","shared services products",25
+"customer success innovations",tam,5
+"customer success management csm","account management/glam",344
+"customer success management csm",bdr,15
+"customer success management csm","customer success management csm",1705
+"customer success management csm","customer support",10
+"customer success management csm","digital marketing",20
+"customer success management csm","drupal cloud engineering",10
+"customer success management csm","drupal cloud products",35
+"customer success management csm","learning & development",10
+"customer success management csm","marketing cloud engineering",20
+"customer success management csm",presales,30
+"customer success management csm","professional services",275
+"customer success management csm","sales ops",25
+"customer success management csm",tam,325
+"customer support","account management/glam",26
+"customer support","customer success innovations",25
+"customer support","customer support",2807
+"customer support","drupal cloud engineering",70
+"customer support","drupal cloud products",40
+"customer support","governance, risk & compliance",10
+"customer support","information technology",35
+"customer support","learning & development",10
+"customer support","learning services",100
+"customer support","marketing cloud products",5
+"customer support","operations cs",179
+"customer support","professional services",10
+"customer support","shared services engineering",20
+"customer support",tam,55
+"digital experience","customer success management csm",5
+"digital experience","digital experience",45
+"digital experience","learning services",30
+"digital experience","marketing cloud products",10
+"digital experience",tam,25
+"digital marketing","customer success management csm",10
+"digital marketing","digital experience",10
+"digital marketing","digital marketing",779
+"digital marketing","drupal cloud products",15
+"digital marketing","facilities /ga",15
+"digital marketing","field marketing",40
+"digital marketing","human resources",260
+"digital marketing",marketing,65
+"digital marketing","marketing operations",95
+"digital marketing","product marketing",20
+"digital marketing","talent acquisition",10
+"drupal cloud engineering","account management/glam",80
+"drupal cloud engineering",accounting,10
+"drupal cloud engineering","customer success innovations",40
+"drupal cloud engineering","customer support",35
+"drupal cloud engineering","drupal cloud engineering",3700
+"drupal cloud engineering","drupal cloud products",208
+"drupal cloud engineering","facilities /ga",20
+"drupal cloud engineering","human resources",70
+"drupal cloud engineering","information technology",10
+"drupal cloud engineering","marketing cloud engineering",119
+"drupal cloud engineering","marketing cloud products",10
+"drupal cloud engineering","operations cs",25
+"drupal cloud engineering","professional services",29
+"drupal cloud engineering","shared services engineering",145
+"drupal cloud engineering","shared services products",8
+"drupal cloud engineering","talent acquisition",85
+"drupal cloud engineering",undefined,108
+"drupal cloud products","customer success innovations",40
+"drupal cloud products","customer success management csm",30
+"drupal cloud products","customer support",40
+"drupal cloud products","drupal cloud engineering",665
+"drupal cloud products","drupal cloud products",198
+"drupal cloud products","information technology",55
+"drupal cloud products","learning services",20
+"drupal cloud products","marketing cloud products",5
+"drupal cloud products","operations cs",10
+"drupal cloud products",presales,15
+"drupal cloud products","product marketing",10
+"drupal cloud products","professional services",110
+"drupal cloud products","shared services engineering",20
+"drupal cloud products","shared services products",175
+"event marketing","digital marketing",25
+"facilities /ga","account management/glam",100
+"facilities /ga",accounting,20
+"facilities /ga","field sales",100
+"facilities /ga","information technology",90
+"facilities /ga","professional services",50
+"field marketing","account management/glam",10
+"field marketing",accounting,25
+"field marketing",bdr,20
+"field marketing","digital marketing",155
+"field marketing","drupal cloud products",20
+"field marketing","event marketing",80
+"field marketing","field marketing",40
+"field marketing","learning services",10
+"field marketing","marketing operations",15
+"field marketing",presales,20
+"field marketing","product marketing",20
+"field marketing","sales ops",50
+"field sales","account management/glam",150
+"field sales",bdr,325
+"field sales","business finance",5
+"field sales",channel,20
+"field sales","digital experience",30
+"field sales","field marketing",125
+"field sales","field sales",357
+"field sales","human resources",10
+"field sales",legal,195
+"field sales",marketing,40
+"field sales","marketing cloud engineering",10
+"field sales",presales,683
+"field sales","product marketing",50
+"field sales","professional services",75
+"field sales",revenue,330
+"field sales","sales ops",80
+"field sales",tam,45
+fp&a,"business finance",125
+fp&a,"customer support",20
+fp&a,fp&a,10
+fp&a,"human resources",30
+fp&a,revenue,90
+"g&a ops","field marketing",20
+"g&a ops","g&a ops",10
+"g&a ops","human resources",10
+"governance, risk & compliance","customer support",35
+"governance, risk & compliance","drupal cloud products",25
+"governance, risk & compliance","governance, risk & compliance",246
+"governance, risk & compliance","information technology",25
+"governance, risk & compliance","operations cs",60
+"governance, risk & compliance",presales,75
+"human resources","account management/glam",500
+"human resources",accounting,30
+"human resources","customer support",250
+"human resources","drupal cloud engineering",2255
+"human resources","drupal cloud products",2750
+"human resources","facilities /ga",60
+"human resources","field sales",510
+"human resources","g&a ops",60
+"human resources","governance, risk & compliance",100
+"human resources","human resources",1175
+"human resources","information technology",30
+"human resources","learning & development",100
+"human resources","learning services",1000
+"human resources","marketing cloud engineering",1325
+"human resources","marketing cloud products",100
+"human resources","professional services",2340
+"human resources","sales ops",50
+"human resources","shared services products",10
+"human resources","talent acquisition",910
+"human resources",tam,2000
+"information technology","account management/glam",25
+"information technology",accounting,35
+"information technology","business finance",10
+"information technology","drupal cloud engineering",5
+"information technology","drupal cloud products",10
+"information technology","facilities /ga",28
+"information technology","human resources",20
+"information technology","information technology",546
+"information technology",presales,10
+"information technology",revenue,45
+"information technology",undefined,100
+"inside sales",bdr,10
+"inside sales","digital experience",25
+"inside sales","inside sales",20
+"inside sales",presales,70
+"inside sales",revenue,35
+"inside sales","sales ops",60
+"learning & development","digital marketing",5
+"learning & development","human resources",80
+"learning & development","information technology",75
+"learning & development","learning & development",60
+"learning & development","marketing cloud engineering",25
+"learning & development",presales,10
+"learning & development","professional services",15
+"learning & development","shared services engineering",25
+"learning & development","talent acquisition",35
+"learning & development",tam,5
+"learning services","customer support",20
+"learning services","digital experience",70
+"learning services","human resources",30
+"learning services","learning services",170
+"learning services",presales,30
+"learning services","professional services",82
+"learning services",tam,41
+legal,accounting,20
+legal,fp&a,20
+legal,legal,135
+legal,revenue,55
+legal,"sales ops",20
+marketing,"account management/glam",50
+marketing,bdr,125
+marketing,"business finance",10
+marketing,channel,30
+marketing,"digital marketing",378
+marketing,"event marketing",20
+marketing,"facilities /ga",10
+marketing,"field marketing",75
+marketing,"field sales",15
+marketing,"information technology",15
+marketing,legal,25
+marketing,marketing,560
+marketing,"marketing cloud engineering",10
+marketing,"marketing operations",145
+marketing,presales,30
+marketing,"product marketing",50
+marketing,"sales ops",40
+marketing,"shared services products",25
+marketing,tam,10
+"marketing cloud engineering",accounting,15
+"marketing cloud engineering","customer support",40
+"marketing cloud engineering","drupal cloud engineering",91
+"marketing cloud engineering","human resources",85
+"marketing cloud engineering","information technology",38
+"marketing cloud engineering","marketing cloud engineering",1331
+"marketing cloud engineering","marketing cloud products",115
+"marketing cloud engineering","product marketing",10
+"marketing cloud engineering","shared services engineering",50
+"marketing cloud engineering","talent acquisition",50
+"marketing cloud engineering",undefined,130
+"marketing cloud products","digital experience",25
+"marketing cloud products","drupal cloud engineering",10
+"marketing cloud products","drupal cloud products",15
+"marketing cloud products","field marketing",10
+"marketing cloud products","marketing cloud engineering",285
+"marketing cloud products","marketing cloud products",105
+"marketing cloud products","professional services",75
+"marketing operations","digital experience",10
+"marketing operations","digital marketing",90
+"marketing operations","information technology",15
+"marketing operations",marketing,680
+"marketing operations","marketing cloud engineering",20
+"marketing operations","marketing cloud products",5
+"marketing operations","marketing operations",261
+"operations cs","account management/glam",50
+"operations cs","customer support",165
+"operations cs","drupal cloud engineering",55
+"operations cs","drupal cloud products",15
+"operations cs","information technology",11
+"operations cs","marketing cloud engineering",50
+"operations cs","operations cs",1275
+"operations cs",tam,5
+"operations cs",undefined,20
+presales,"account management/glam",190
+presales,accounting,5
+presales,channel,50
+presales,"customer success management csm",120
+presales,"customer support",5
+presales,"digital experience",25
+presales,"drupal cloud engineering",20
+presales,"drupal cloud products",35
+presales,"field marketing",20
+presales,"field sales",60
+presales,"governance, risk & compliance",10
+presales,"inside sales",20
+presales,marketing,20
+presales,presales,1345
+presales,"product marketing",20
+presales,"professional services",115
+presales,revenue,5
+presales,"sales ops",15
+presales,tam,100
+"product marketing",channel,10
+"product marketing","customer success management csm",15
+"product marketing","digital marketing",20
+"product marketing","drupal cloud products",20
+"product marketing","field marketing",25
+"product marketing","field sales",20
+"product marketing",marketing,100
+"product marketing",presales,80
+"product marketing","product marketing",120
+"professional services","account management/glam",55
+"professional services",accounting,20
+"professional services","customer success management csm",140
+"professional services","customer support",35
+"professional services","digital marketing",10
+"professional services","drupal cloud engineering",151
+"professional services","drupal cloud products",225
+"professional services","field sales",15
+"professional services","governance, risk & compliance",30
+"professional services","human resources",62
+"professional services","information technology",30
+"professional services","marketing cloud engineering",70
+"professional services","marketing cloud products",20
+"professional services","marketing operations",20
+"professional services","operations cs",20
+"professional services",presales,105
+"professional services","professional services",4530
+"professional services",revenue,10
+"professional services","shared services products",7
+"professional services",tam,60
+"professional services",undefined,10
+revenue,"account management/glam",5
+revenue,accounting,30
+revenue,"business finance",40
+revenue,"customer support",10
+revenue,fp&a,180
+revenue,legal,5000
+revenue,"professional services",5
+revenue,revenue,1091
+revenue,"sales ops",15
+"sales ops","account management/glam",70
+"sales ops",accounting,10
+"sales ops",bdr,100
+"sales ops","customer success management csm",15
+"sales ops","field sales",130
+"sales ops","information technology",55
+"sales ops",marketing,10
+"sales ops",presales,50
+"sales ops",revenue,60
+"sales ops","sales ops",70
+"shared services engineering","account management/glam",800
+"shared services engineering","customer success innovations",25
+"shared services engineering","customer success management csm",650
+"shared services engineering","drupal cloud engineering",48
+"shared services engineering","drupal cloud products",170
+"shared services engineering","field sales",50
+"shared services engineering","learning services",10
+"shared services engineering","marketing cloud engineering",245
+"shared services engineering","marketing cloud products",10
+"shared services engineering","shared services engineering",10
+"shared services engineering","shared services products",25
+"shared services engineering",tam,150
+"shared services products","customer support",90
+"shared services products","drupal cloud engineering",55
+"shared services products","drupal cloud products",163
+"shared services products","facilities /ga",5
+"shared services products","human resources",17
+"shared services products",marketing,25
+"shared services products","marketing cloud products",5
+"shared services products","professional services",20
+"shared services products","shared services engineering",25
+"shared services products","shared services products",564
+"strategic project management pmo","account management/glam",30
+"strategic project management pmo",channel,10
+"strategic project management pmo","drupal cloud products",10
+"strategic project management pmo","g&a ops",10
+"strategic project management pmo","strategic project management pmo",25
+"talent acquisition",accounting,10
+"talent acquisition",channel,300
+"talent acquisition","digital marketing",40
+"talent acquisition","drupal cloud engineering",850
+"talent acquisition","drupal cloud products",150
+"talent acquisition","governance, risk & compliance",50
+"talent acquisition","human resources",115
+"talent acquisition","information technology",45
+"talent acquisition","learning & development",30
+"talent acquisition","marketing cloud engineering",460
+"talent acquisition","professional services",365
+"talent acquisition","shared services engineering",20
+"talent acquisition","talent acquisition",515
+"talent acquisition",tam,70
+tam,"account management/glam",85
+tam,"customer success management csm",95
+tam,"customer support",230
+tam,"digital experience",65
+tam,"drupal cloud engineering",151
+tam,"drupal cloud products",20
+tam,"information technology",70
+tam,"learning services",20
+tam,"marketing cloud engineering",10
+tam,"operations cs",25
+tam,presales,120
+tam,"professional services",211
+tam,"talent acquisition",20
+tam,tam,1371
+undefined,"information technology",15
+undefined,"marketing cloud engineering",35
+undefined,"professional services",10

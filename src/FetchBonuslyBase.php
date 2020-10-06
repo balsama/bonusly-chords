@@ -35,7 +35,7 @@ class FetchBonuslyBase
     public function getJson() {
         $json = json_decode(file_get_contents($this->url), true);
         if (!$json['success']) {
-            throw new \mysql_xdevapi\Exception('Failed to fetch JSON');
+            throw new \Exception('Failed to fetch JSON');
         }
         return $json['result'];
     }

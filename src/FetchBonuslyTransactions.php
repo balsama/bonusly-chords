@@ -8,19 +8,24 @@ class FetchBonuslyTransactions extends FetchBonuslyBase {
     private $totalFetched = 0;
     private $transactions = [];
     private $lastRecordDateTime;
-    private $numberOfDaysToGet;
+    private $monthToGet;
     private $sums;
 
-    public function __construct($numberOfDaysToGet = 30) {
+    public function __construct(\DateTime $monthToGet) {
         parent::__construct('bonuses');
-        $this->numberOfDaysToGet = $numberOfDaysToGet;
+        $this->monthToGet = $monthToGet;
         $this->fetchAllTransactions();
         $this->compute();
     }
 
     public function fetchAllTransactions() {
         $json = $this->getJson();
-        $this->transactions = array_merge($this->transactions, $json);
+        foreach ($json as $potential) {
+            $thisRecordsDatetime = new \DateTime($potential['created_at']);
+            if ($thisRecordsDatetime->format('Y-m') === $this->monthToGet->format('Y-m')) {
+                $this->transactions[] = $potential;
+            }
+        }
         $amountFetched = count($json);
         if ($this->totalFetched == 0) {
             $this->recordLastTransactionDate($json);
@@ -42,13 +47,13 @@ class FetchBonuslyTransactions extends FetchBonuslyBase {
     }
 
     private function keepGoing($json) {
-        $firstRecord = end($json);
-        $firstRecordDateTime = new \DateTime($firstRecord['created_at']);
-        $diff = $firstRecordDateTime->diff($this->lastRecordDateTime);
-        if ($diff->d < $this->numberOfDaysToGet) {
-            return true;
+        $oldestRecordFetchedThusFar = end($json);
+        $oldestRecordFetchedThusFarDateTime = new \DateTime($oldestRecordFetchedThusFar['created_at']);
+        if ($oldestRecordFetchedThusFarDateTime->format('Ym') < $this->monthToGet->format('Ym')) {
+            return false;
         }
-        return false;
+        echo "Oldest record fetched thus far is: " . $oldestRecordFetchedThusFarDateTime->format('Y-m-d') . "\n";
+        return true;
     }
 
     private function compute() {
