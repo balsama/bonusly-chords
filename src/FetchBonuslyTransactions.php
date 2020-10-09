@@ -1,24 +1,27 @@
 <?php
 
 namespace BonuslyChord;
-include_once('FetchBonuslyBase.php');
-use BonuslyChord\FetchBonuslyBase;
 
 class FetchBonuslyTransactions extends FetchBonuslyBase {
+    private $useTestData;
     private $totalFetched = 0;
     private $transactions = [];
     private $lastRecordDateTime;
     private $monthToGet;
     private $sums;
 
-    public function __construct(\DateTime $monthToGet) {
+    public function __construct(\DateTime $monthToGet, $useTestData = false) {
         parent::__construct('bonuses');
+        $this->useTestData = $useTestData;
         $this->monthToGet = $monthToGet;
         $this->fetchAllTransactions();
-        $this->compute();
     }
 
     public function fetchAllTransactions() {
+        if ($this->useTestData) {
+            $this->transactions = json_decode(file_get_contents('sample-data/sep-2020-raw.json'), true);
+            return;
+        }
         $json = $this->getJson();
         foreach ($json as $potential) {
             $thisRecordsDatetime = new \DateTime($potential['created_at']);
@@ -54,70 +57,6 @@ class FetchBonuslyTransactions extends FetchBonuslyBase {
         }
         echo "Oldest record fetched thus far is: " . $oldestRecordFetchedThusFarDateTime->format('Y-m-d') . "\n";
         return true;
-    }
-
-    private function compute() {
-        $sums = [];
-        foreach ($this->transactions as $transaction) {
-            $departmentFrom = $this->getDepartment($transaction, 'giver');
-            $departmentTo = $this->getDepartment($transaction, 'receiver');
-            $amount = $transaction['amount'];
-            if (isset($sums[$departmentFrom . " TO " . $departmentTo])) {
-                $sums[$departmentFrom . " TO " . $departmentTo] = $sums[$departmentFrom . " TO " . $departmentTo] + $amount;
-            }
-            else {
-                $sums[$departmentFrom . " TO " . $departmentTo] = $amount;
-            }
-        }
-        ksort($sums);
-        $this->sums = $sums;
-    }
-
-    /**
-     * @param $transaction
-     * @param $role
-     *   Needs to one of 'giver' or 'receiver'
-     * @return string
-     */
-    private function getDepartment($transaction, $role) {
-        if (isset($transaction[$role]['sub_department'])) {
-            return $transaction[$role]['sub_department'];
-        }
-        elseif (isset($transaction[$role]['department'])) {
-            return $transaction[$role]['department'];
-        }
-        return 'undefined';
-    }
-
-    public function getSums() {
-        return $this->sums;
-    }
-
-    public function getSumsAsCsv() {
-        $values[] = [
-            'from',
-            'to',
-            'count',
-        ];
-        foreach ($this->sums as $departments=>$sum) {
-            $splitDepartments = explode(" TO ", $departments);
-            $from = $splitDepartments[0];
-            $to = $splitDepartments[1];
-            $values[] = [
-                $from,
-                $to,
-                $sum,
-            ];
-        }
-        return $values;
-    }
-
-    public function writeCsv($filename) {
-        $fp = fopen('data/' . $filename, 'w');
-
-        foreach ($this->getSumsAsCsv() as $fields) {
-            fputcsv($fp, $fields);
-        }
     }
 
 }

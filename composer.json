@@ -1,0 +1,26 @@
+{
+    "name": "balsama/bonusly-chords",
+    "description": "Visualizations of Bonusly Transactions",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Adam Balsam",
+            "email": "adam.balsam@acquia.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "BonuslyChord\\": "src"
+        }
+    },
+    "require": {
+        "balsama/fetch": "^0.1.1",
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5@dev"
+    }
+}

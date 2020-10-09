@@ -2,6 +2,8 @@
 
 namespace BonuslyChord;
 
+use Balsama\Fetch;
+
 class FetchBonuslyBase
 {
     /**
@@ -33,11 +35,11 @@ class FetchBonuslyBase
     }
 
     public function getJson() {
-        $json = json_decode(file_get_contents($this->url), true);
-        if (!$json['success']) {
+        $json = Fetch::fetch($this->url);
+        if (!$json->success) {
             throw new \Exception('Failed to fetch JSON');
         }
-        return $json['result'];
+        return json_decode(json_encode($json->result), true);
     }
 
     private function setAccessToken() {

@@ -1,2 +1,5 @@
 .bonusly_access_token
 /.idea
+/vendor/
+/data
+/sample-data
